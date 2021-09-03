@@ -1,0 +1,15 @@
+<div class="flex">
+    <div class="flex-item" *ngFor="let list of pokemons">
+        <img [src]="list.img" alt="">
+        <h2>{{list.name.english}}</h2>
+        <div *ngIf="list.type[1]; else elseType">
+            <p>{{list.type[0]}}</p>   
+            <p>{{list.type[1]}}</p>        
+        </div>
+        <ng-template #elseType>
+            <p>{{list.type[0]}}</p>   
+        </ng-template>
+    </div>
+</div>
+
+
