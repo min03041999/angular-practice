@@ -23,7 +23,7 @@ p{
     border-radius: 4px;
     display: inline-block;
 }
-p:last-child{
+p:nth-child(2){
     background-color: rgb(179, 38, 179);
     border: 1px solid rgb(179, 38, 179);
     margin-right: 0;
