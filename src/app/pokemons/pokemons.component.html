@@ -1,15 +1,30 @@
 <div class="flex">
-    <div class="flex-item" *ngFor="let list of pokemons">
-        <img [src]="list.img" alt="">
-        <h2>{{list.name.english}}</h2>
-        <div *ngIf="list.type[1]; else elseType">
-            <p>{{list.type[0]}}</p>   
-            <p>{{list.type[1]}}</p>        
-        </div>
-        <ng-template #elseType>
-            <p>{{list.type[0]}}</p>   
-        </ng-template>
+  <div class="flex-item" *ngFor="let list of pokemons">
+    <img [src]="list.img" alt="" />
+    <h2>{{ list.name.english }}</h2>
+    <div class="inline-block" *ngFor="let type of list.type">
+      <div
+        class="btn"
+        [ngClass]="{
+          'btn-success': type === 'Grass',
+          'btn-danger': type === 'Fire',
+          'btn-primary': type === 'Water',
+          'btn-poison': type === 'Poison',
+          'btn-flying': type === 'Flying',
+          'btn-dark': type === 'Ghost',
+          'btn-warning': type === 'Electric',
+          'btn-secondary': type === 'Bug',
+          'btn-light': type === 'Normal',
+          'btn-ground': type === 'Ground',
+          'btn-fighting': type === 'Fighting',
+          'btn-rock': type === 'Rock',
+          'btn-fairy': type === 'Fairy',
+          'btn-psychic': type === 'Psychic',
+          'btn-ice': type === 'Ice'
+        }"
+      >
+        {{ type }}
+      </div>
     </div>
+  </div>
 </div>
-
-
