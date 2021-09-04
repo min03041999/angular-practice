@@ -3,28 +3,45 @@
     flex-wrap: wrap;
 }
 .flex-item {
-    width: calc(100%/4);
+    width: calc(100% / 4);
     text-align: center;
 }
-.img{
+.img {
     width: 100%;
     object-fit: cover;
     display: block;
     margin: auto;
 }
-p{
-    font-size: 13px;
-    text-transform: uppercase;
-    border: 1px solid rgb(11, 163, 11);
-    background-color: rgb(11, 163, 11);
-    padding: 5px 10px;
-    margin-right: 10px;
-    color: #000;
-    border-radius: 4px;
+.inline-block {
     display: inline-block;
 }
-p:nth-child(2){
-    background-color: rgb(179, 38, 179);
-    border: 1px solid rgb(179, 38, 179);
-    margin-right: 0;
+
+.btn {
+    margin-right: 5px;
+    color: #000;
+}
+
+.btn-poison {
+    background-color: rgb(199, 33, 199);
+}
+.btn-flying {
+    background-color: rgb(121, 207, 223);
+}
+.btn-ground {
+    background-color: rgb(112, 53, 53);
+}
+.btn-fighting {
+    background-color: rgb(204, 107, 17);
+}
+.btn-rock {
+    background-color: rgb(97, 97, 97);
+}
+.btn-fairy {
+    background-color: pink;
+}
+.btn-psychic {
+    background-color: yellow;
+}
+.btn-ice {
+    background-color: rgb(102, 210, 243);
 }
