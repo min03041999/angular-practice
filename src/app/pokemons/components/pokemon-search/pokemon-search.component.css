@@ -1,0 +1,30 @@
+form {
+    text-align: center;
+    margin: 10px 0;
+}
+
+input,
+button {
+    outline: none;
+    background: none;
+    border: none;
+}
+
+input {
+    border-bottom: 1px solid gray;
+    margin-right: 10px;
+}
+
+button {
+    cursor: pointer;
+    border: 1px solid rgb(0, 89, 255);
+    border-radius: 5px;
+    background: rgb(0, 89, 255);
+    color: #fff;
+    transition: 0.4s ease;
+}
+
+button:hover {
+    background: #fff;
+    color: #000;
+}

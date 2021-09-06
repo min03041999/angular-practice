@@ -9,6 +9,7 @@ import { PokemonService } from '../shared/Service/pokemon.service';
 })
 export class PokemonsComponent implements OnInit {
   pokemons: Pokemon[] = [];
+  pokemonnew: Pokemon[] = [];
   constructor(private pokemonService: PokemonService) { }
 
   ngOnInit(): void {
@@ -16,6 +17,17 @@ export class PokemonsComponent implements OnInit {
   }
 
   getPokemonList() {
-    this.pokemonService.getPokemonList().subscribe(pokemons => this.pokemons = pokemons)
+    this.pokemonService.getPokemonList().subscribe(pokemons => {
+      this.pokemons = pokemons;
+      this.pokemonnew = pokemons;
+    })
+  }
+
+  //Search
+  onSearch(data: string) {
+    this.pokemons = this.pokemonnew.filter(news => {
+      return news.name.english.toLowerCase().includes(data)
+    })
+    console.log(this.pokemons)
   }
 }
