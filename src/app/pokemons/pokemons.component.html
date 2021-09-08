@@ -1,11 +1,19 @@
 <app-pokemon-search (search)="onSearch($event)"></app-pokemon-search>
 <div class="flex">
   <ng-container *ngIf="pokemons.length > 0; else notFound">
-    <div class="flex-item" *ngFor="let list of pokemons">
+    <div
+      class="flex-item"
+      *ngFor="let list of pokemons"
+      (click)="onDetail(list)"
+    >
       <div>
         <img [src]="list.img" alt="{{ list.name.english }}" />
         <h2>{{ list.name.english }}</h2>
-        <div class="inline-block" *ngFor="let type of list.type">
+        <div
+          class="inline-block"
+          *ngFor="let type of list.type; last as isLast"
+          [class.right-margin]="!isLast"
+        >
           <div
             class="btn"
             [ngClass]="{
