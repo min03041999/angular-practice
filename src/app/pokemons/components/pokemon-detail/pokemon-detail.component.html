@@ -1,0 +1,75 @@
+<div class="pokemon-detail">
+  <mat-dialog-actions>
+    <button class="btn__close" mat-icon-button mat-dialog-close>
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-dialog-actions>
+  <div mat-dialog-content align="center">
+    <div *ngFor="let item of arrPokemon">
+      <img [src]="item.img" alt="{{ item.name.english }}" />
+      <h2>{{ item.name.english }}</h2>
+      <div
+        class="inline-block"
+        *ngFor="let type of item.type; last as isLast"
+        [class.right-margin]="!isLast"
+      >
+        <div
+          class="btn"
+          [ngClass]="{
+            'btn-success': type === 'Grass',
+            'btn-danger': type === 'Fire',
+            'btn-primary': type === 'Water',
+            'btn-poison': type === 'Poison',
+            'btn-flying': type === 'Flying',
+            'btn-dark': type === 'Ghost',
+            'btn-warning': type === 'Electric',
+            'btn-secondary': type === 'Bug',
+            'btn-light': type === 'Normal',
+            'btn-ground': type === 'Ground',
+            'btn-fighting': type === 'Fighting',
+            'btn-rock': type === 'Rock',
+            'btn-fairy': type === 'Fairy',
+            'btn-psychic': type === 'Psychic',
+            'btn-ice': type === 'Ice'
+          }"
+        >
+          {{ type }}
+        </div>
+      </div>
+      <div class="base">
+        <div class="base__item">
+          <ul>
+            <li>Attack</li>
+            <li>Defense</li>
+            <li>HP</li>
+            <li>SpAttack</li>
+            <li>SpDefense</li>
+            <li>Speed</li>
+          </ul>
+        </div>
+        <div class="base__item">
+          <ul>
+            <li>
+              {{ item.base.Attack }}
+            </li>
+            <li>
+              {{ item.base.Defense }}
+            </li>
+            <li>
+              {{ item.base.HP }}
+            </li>
+            <li>
+              {{ item.base.SpAttack }}
+            </li>
+            <li>
+              {{ item.base.SpDefense }}
+            </li>
+            <li>
+              {{ item.base.Speed }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

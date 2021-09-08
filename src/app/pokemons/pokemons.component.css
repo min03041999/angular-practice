@@ -3,8 +3,10 @@
     flex-wrap: wrap;
 }
 .flex-item {
-    width: calc(100% / 4);
+    width: calc(100% / 4 - 80px);
+    margin: 0px 40px 20px;
     text-align: center;
+    cursor: pointer;
 }
 .img {
     width: 100%;
@@ -16,8 +18,11 @@
     display: inline-block;
 }
 
-.btn {
+.right-margin {
     margin-right: 5px;
+}
+
+.btn {
     color: #000;
 }
 
