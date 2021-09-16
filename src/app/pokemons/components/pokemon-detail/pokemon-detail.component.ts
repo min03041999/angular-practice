@@ -6,12 +6,6 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
   templateUrl: './pokemon-detail.component.html',
   styleUrls: ['./pokemon-detail.component.css']
 })
-export class PokemonDetailComponent implements OnInit {
-  arrPokemon: any = [];
+export class PokemonDetailComponent {
   constructor(@Inject(MAT_DIALOG_DATA) public data:any) { }
-
-  ngOnInit(): void {
-    this.arrPokemon.push(this.data);
-  }
-
 }

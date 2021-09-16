@@ -1,0 +1,22 @@
+.example-card {
+  width: 500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  width: calc(100% / 2 - 10px);
+  margin: 0px 5px;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}

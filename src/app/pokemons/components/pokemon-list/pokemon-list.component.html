@@ -1,0 +1,57 @@
+<app-pokemon-search (search)="onSearch($event)"></app-pokemon-search>
+<button mat-raised-button color="primary" [routerLink]="['/pokemons/add']">
+  Add Pokemon
+</button>
+<div class="flex">
+  <ng-container *ngIf="pokemons.length > 0; else notFound">
+    <div class="flex-item" *ngFor="let list of pokemons">
+      <div class="row">
+        <div class="col-md-10">
+          <div>
+            <img [src]="list.img" alt="{{ list.name.english }}" />
+            <h2>{{ list.name.english }}</h2>
+            <div
+              class="inline-block"
+              *ngFor="let type of list.type; last as isLast"
+              [class.right-margin]="!isLast"
+            >
+              <div
+                class="btn"
+                [ngClass]="{
+                  'btn-success': type === 'Grass',
+                  'btn-danger': type === 'Fire',
+                  'btn-primary': type === 'Water',
+                  'btn-poison': type === 'Poison',
+                  'btn-flying': type === 'Flying',
+                  'btn-dark': type === 'Ghost',
+                  'btn-warning': type === 'Electric',
+                  'btn-secondary': type === 'Bug',
+                  'btn-light': type === 'Normal',
+                  'btn-ground': type === 'Ground',
+                  'btn-fighting': type === 'Fighting',
+                  'btn-rock': type === 'Rock',
+                  'btn-fairy': type === 'Fairy',
+                  'btn-psychic': type === 'Psychic',
+                  'btn-ice': type === 'Ice'
+                }"
+              >
+                {{ type }}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <button mat-icon-button (click)="onDetail(list)">
+            <mat-icon>info</mat-icon>
+          </button>
+          <button mat-icon-button [routerLink]="['/pokemons/edit', list.id]">
+            <mat-icon>edit</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+  <ng-template #notFound>
+    <p>Không tìm thấy Pokemon</p>
+  </ng-template>
+</div>
