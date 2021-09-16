@@ -1,9 +1,9 @@
-<form>
-  <input
-    type="text"
-    placeholder="Tìm kiếm pokemon..."
-    name="searchName"
-    [(ngModel)]="searchName"
-  />
-  <button (click)="searchPokemon()">Tìm kiếm</button>
-</form>
+<mat-card>
+  <form (ngSubmit)="searchPokemon()">
+    <mat-form-field class="txt__field">
+      <mat-label>Search Pokemon...</mat-label>
+      <input matInput name="searchName" [(ngModel)]="searchName" />
+    </mat-form-field>
+    <button mat-raised-button color="primary">Search</button>
+  </form>
+</mat-card>

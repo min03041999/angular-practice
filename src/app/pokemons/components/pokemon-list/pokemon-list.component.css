@@ -1,0 +1,72 @@
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+.flex-item {
+  width: calc(100% / 4 - 80px);
+  margin: 0px 40px 20px;
+  text-align: center;
+}
+.img {
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  margin: auto;
+}
+.inline-block {
+  display: inline-block;
+}
+
+.right-margin {
+  margin-right: 5px;
+}
+
+.btn {
+  color: #000;
+}
+
+.btn-poison {
+  background-color: rgb(199, 33, 199);
+}
+.btn-flying {
+  background-color: rgb(121, 207, 223);
+}
+.btn-ground {
+  background-color: rgb(112, 53, 53);
+}
+.btn-fighting {
+  background-color: rgb(204, 107, 17);
+}
+.btn-rock {
+  background-color: rgb(97, 97, 97);
+}
+.btn-fairy {
+  background-color: pink;
+}
+.btn-psychic {
+  background-color: yellow;
+}
+.btn-ice {
+  background-color: rgb(102, 210, 243);
+}
+p {
+  color: red;
+}
+
+.margin {
+  margin: 10px 0;
+}
+
+.mat-accent {
+  background-color: #28a745;
+}
+
+.mat-accent {
+  background-color: #a79a28;
+}
+
+button {
+  border: none;
+  outline: none;
+  background: none;
+}
