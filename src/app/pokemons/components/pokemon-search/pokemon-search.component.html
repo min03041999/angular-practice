@@ -1,9 +1,16 @@
-<mat-card>
-  <form (ngSubmit)="searchPokemon()">
+<mat-card class="pokemon-search">
+  <!-- <form (ngSubmit)="searchPokemon()">
     <mat-form-field class="txt__field">
       <mat-label>Search Pokemon...</mat-label>
       <input matInput name="searchName" [(ngModel)]="searchName" />
     </mat-form-field>
     <button mat-raised-button color="primary">Search</button>
+  </form> -->
+
+  <form>
+    <mat-form-field class="txt__field">
+      <mat-label>Search Pokemon...</mat-label>
+      <input matInput [formControl]="myControl" />
+    </mat-form-field>
   </form>
 </mat-card>

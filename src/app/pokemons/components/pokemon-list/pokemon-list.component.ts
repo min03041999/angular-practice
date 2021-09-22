@@ -7,38 +7,40 @@ import { PokemonDetailComponent } from '../pokemon-detail/pokemon-detail.compone
 @Component({
   selector: 'app-pokemon-list',
   templateUrl: './pokemon-list.component.html',
-  styleUrls: ['./pokemon-list.component.css']
+  styleUrls: ['./pokemon-list.component.css'],
 })
 export class PokemonListComponent implements OnInit {
-
   pokemons: Pokemon[] = [];
   pokemonnew: Pokemon[] = [];
-  constructor(private pokemonService: PokemonService, public dialog: MatDialog) { }
+  constructor(
+    private pokemonService: PokemonService,
+    public dialog: MatDialog
+  ) {}
 
   ngOnInit(): void {
-    this.getPokemonList()
+    this.getPokemonList();
   }
 
   getPokemonList() {
-    this.pokemonService.getPokemonList().subscribe(pokemons => {
+    this.pokemonService.getPokemonList().subscribe((pokemons) => {
       this.pokemons = pokemons;
       this.pokemonnew = pokemons;
-    })
+    });
   }
 
   //Search
   onSearch(data: string) {
-    this.pokemons = this.pokemonnew.filter(news => {
-      return news.name.english.toLowerCase().includes(data)
-    })
-    console.log(this.pokemons)
+    this.pokemons = this.pokemonnew.filter((news) => {
+      return news.name.english.toLowerCase().includes(data.toLowerCase());
+    });
+    console.log(this.pokemons);
   }
 
   //Detail
-  onDetail(pokemon: Pokemon) {
-    this.dialog.open(PokemonDetailComponent, {
-      data: pokemon,
-      width: '400px'
-    })
-  }
+  // onDetail(pokemon: Pokemon) {
+  //   this.dialog.open(PokemonDetailComponent, {
+  //     data: pokemon,
+  //     width: '400px',
+  //   });
+  // }
 }

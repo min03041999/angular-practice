@@ -3,6 +3,10 @@ mat-card {
   display: block;
   margin: auto;
 }
+
+.pokemon-search {
+  margin-top: 100px;
+}
 .txt__field {
   margin-right: 10px;
 }

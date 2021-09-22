@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PokemonAddComponent } from './components/pokemon-add/pokemon-add.component';
-import { PokemonEditComponent } from './components/pokemon-edit/pokemon-edit.component';
+import { PokemonDetailComponent } from './components/pokemon-detail/pokemon-detail.component';
+import { PokemonFormComponent } from './components/pokemon-form/pokemon-form.component';
 import { PokemonListComponent } from './components/pokemon-list/pokemon-list.component';
 import { PokemonsComponent } from './pokemons.component';
 
@@ -12,22 +12,26 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: PokemonListComponent
+        component: PokemonListComponent,
+      },
+      {
+        path: 'detail/:id',
+        component: PokemonDetailComponent,
       },
       {
         path: 'add',
-        component: PokemonAddComponent
+        component: PokemonFormComponent,
       },
       {
         path: 'edit/:id',
-        component: PokemonEditComponent
-      }
-    ]
-  }
+        component: PokemonFormComponent,
+      },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class PokemonsRoutingModule { }
+export class PokemonsRoutingModule {}
