@@ -1,5 +1,26 @@
 .pokemon-detail {
   position: relative;
+  margin-top: 100px;
+}
+
+mat-card {
+  width: 400px;
+  display: block;
+  margin: auto;
+}
+
+.left {
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  transform: translateX(-50%);
+}
+
+.right {
+  position: absolute;
+  top: 50%;
+  right: 0px;
+  transform: translateX(-50%);
 }
 
 .mat-dialog-actions {
@@ -17,6 +38,7 @@ button {
   outline: none;
   background: none;
   padding: 2px 3px;
+  cursor: pointer;
 }
 
 .btn__close {

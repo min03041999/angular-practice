@@ -1,0 +1,149 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title *ngIf="isAddMode">Add Pokemon</mat-card-title>
+    <mat-card-title *ngIf="!isAddMode">Edit Pokemon</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form
+      (ngSubmit)="pokemonID ? onSubmitEdit() : onSubmitAdd()"
+      [formGroup]="formPokemon"
+    >
+      <div class="flex">
+        <div formGroupName="name">
+          <mat-form-field appearance="fill">
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="english" />
+            <mat-error>
+              <div
+                *ngIf="
+                  formPokemon.get('name.english')?.hasError('required') &&
+                  formPokemon.get('name.english')?.touched
+                "
+              >
+                Name invalid
+              </div>
+              <div
+                *ngIf="
+                  formPokemon.get('name.english')?.hasError('maxlength') &&
+                  formPokemon.get('name.english')?.touched
+                "
+              >
+                Please enter no more than 100 characters
+              </div>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <mat-form-field appearance="fill">
+          <mat-label>Select</mat-label>
+          <mat-select formControlName="type" multiple>
+            <mat-option
+              *ngFor="let item of typePokemon"
+              value="{{ item.name }}"
+            >
+              {{ item.name }}
+            </mat-option>
+          </mat-select>
+          <mat-error
+            *ngIf="
+              formPokemon.get('type')?.hasError('required') &&
+              formPokemon.get('type')?.touched
+            "
+          >
+            Type is required
+          </mat-error>
+        </mat-form-field>
+        <div class="flex" formGroupName="base">
+          <mat-form-field appearance="fill">
+            <mat-label>Attack</mat-label>
+            <input type="number" matInput formControlName="attack" />
+            <mat-error
+              *ngIf="
+                formPokemon.get('base.attack')?.hasError('required') &&
+                formPokemon.get('base.attack')?.touched
+              "
+            >
+              Attack is required
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Defense</mat-label>
+            <input type="number" matInput formControlName="defense" />
+            <mat-error
+              *ngIf="
+                formPokemon.get('base.defense')?.hasError('required') &&
+                formPokemon.get('base.defense')?.touched
+              "
+            >
+              Defense is required
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>HP</mat-label>
+            <input type="number" matInput formControlName="hp" />
+            <mat-error
+              *ngIf="
+                formPokemon.get('base.hp')?.hasError('required') &&
+                formPokemon.get('base.hp')?.touched
+              "
+            >
+              HP is required
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>SpAttack</mat-label>
+            <input type="number" matInput formControlName="spAttack" />
+            <mat-error
+              *ngIf="
+                formPokemon.get('base.spAttack')?.hasError('required') &&
+                formPokemon.get('base.spAttack')?.touched
+              "
+            >
+              Sp Attack is required
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>spDefense</mat-label>
+            <input type="number" matInput formControlName="spDefense" />
+            <mat-error
+              *ngIf="
+                formPokemon.get('base.spDefense')?.hasError('required') &&
+                formPokemon.get('base.spDefense')?.touched
+              "
+            >
+              Sp Defense is required
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Speed</mat-label>
+            <input type="number" matInput formControlName="speed" />
+            <mat-error
+              *ngIf="
+                formPokemon.get('speed.spDefense')?.hasError('required') &&
+                formPokemon.get('speed.spDefense')?.touched
+              "
+            >
+              Speed is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <mat-card-actions style="text-align: center">
+        <button
+          mat-raised-button
+          color="primary"
+          [disabled]="formPokemon.invalid"
+        >
+          Create
+        </button>
+        <button
+          type="button"
+          mat-raised-button
+          color="warn"
+          (click)="onCancel()"
+        >
+          Cancel
+        </button>
+      </mat-card-actions>
+    </form>
+  </mat-card-content>
+</mat-card>

@@ -18,21 +18,21 @@
               <div
                 class="btn"
                 [ngClass]="{
-                  'btn-success': type === 'Grass',
-                  'btn-danger': type === 'Fire',
-                  'btn-primary': type === 'Water',
-                  'btn-poison': type === 'Poison',
-                  'btn-flying': type === 'Flying',
-                  'btn-dark': type === 'Ghost',
-                  'btn-warning': type === 'Electric',
-                  'btn-secondary': type === 'Bug',
-                  'btn-light': type === 'Normal',
-                  'btn-ground': type === 'Ground',
-                  'btn-fighting': type === 'Fighting',
-                  'btn-rock': type === 'Rock',
-                  'btn-fairy': type === 'Fairy',
-                  'btn-psychic': type === 'Psychic',
-                  'btn-ice': type === 'Ice'
+                  'btn-success': type === 'grass',
+                  'btn-danger': type === 'fire',
+                  'btn-primary': type === 'water',
+                  'btn-poison': type === 'poison',
+                  'btn-flying': type === 'flying',
+                  'btn-dark': type === 'ghost',
+                  'btn-warning': type === 'electric',
+                  'btn-secondary': type === 'bug',
+                  'btn-light': type === 'normal',
+                  'btn-ground': type === 'ground',
+                  'btn-fighting': type === 'fighting',
+                  'btn-rock': type === 'rock',
+                  'btn-fairy': type === 'fairy',
+                  'btn-psychic': type === 'psychic',
+                  'btn-ice': type === 'ice'
                 }"
               >
                 {{ type }}
@@ -41,7 +41,7 @@
           </div>
         </div>
         <div class="col-md-2">
-          <button mat-icon-button (click)="onDetail(list)">
+          <button mat-icon-button [routerLink]="['/pokemons/detail', list.id]">
             <mat-icon>info</mat-icon>
           </button>
           <button mat-icon-button [routerLink]="['/pokemons/edit', list.id]">
@@ -52,6 +52,6 @@
     </div>
   </ng-container>
   <ng-template #notFound>
-    <p>Không tìm thấy Pokemon</p>
+    <p style="text-align: center">Không tìm thấy Pokemon</p>
   </ng-template>
 </div>

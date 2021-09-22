@@ -5,13 +5,15 @@ nav {
   color: #fff;
   padding: 20px;
   overflow: hidden;
-  margin-bottom: 30px;
 }
 
 .flex {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  position: fixed;
+  top: 0;
+  z-index: 1;
 }
 
 button {
