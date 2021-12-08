@@ -1,0 +1,30 @@
+<!-- <mat-toolbar>
+  <span>My App</span>
+  <span class="example-spacer"></span>
+  <p matBadge="{{ like }}" matBadgeOverlap="false">LIKE</p>
+  <button
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with share icon"
+  >
+    <p matBadge="{{ dislike }}" matBadgeOverlap="false">DISLIKE</p>
+  </button>
+</mat-toolbar> -->
+
+<nav class="flex">
+  <div>
+    <h1>My App</h1>
+  </div>
+  <div>
+    <button mat-icon-button class="example-icon">
+      <p matBadge="{{ like }}" matBadgeColor="warn" matBadgeOverlap="false">
+        LIKE
+      </p>
+    </button>
+    <button mat-icon-button class="example-icon">
+      <p matBadge="{{ dislike }}" matBadgeColor="warn" matBadgeOverlap="false">
+        DISLIKE
+      </p>
+    </button>
+  </div>
+</nav>

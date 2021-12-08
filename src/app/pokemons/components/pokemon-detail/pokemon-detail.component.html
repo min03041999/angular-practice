@@ -1,0 +1,98 @@
+<ng-container *ngIf="pokemon; else noPokemon">
+  <div class="pokemon-detail">
+    <button
+      type="button"
+      mat-raised-button
+      color="warn"
+      [routerLink]="['/pokemons']"
+    >
+      Cancel
+    </button>
+    <mat-card align="center">
+      <button class="right" (click)="nextPokemon(pokemon.id)">
+        <mat-icon>keyboard_arrow_right</mat-icon>
+      </button>
+      <button
+        class="left"
+        [disabled]="pokemon.id === 1"
+        (click)="previousPokemon(pokemon.id)"
+      >
+        <mat-icon>keyboard_arrow_left</mat-icon>
+      </button>
+      <img [src]="pokemon.img" alt="{{ pokemon.name.english }}" />
+      <h2>{{ pokemon.name.english }}</h2>
+      <div
+        class="inline-block"
+        *ngFor="let type of pokemon.type; last as isLast"
+        [class.right-margin]="!isLast"
+      >
+        <div
+          class="btn"
+          [ngClass]="{
+            'btn-success': type === 'grass',
+            'btn-danger': type === 'fire',
+            'btn-primary': type === 'water',
+            'btn-poison': type === 'poison',
+            'btn-flying': type === 'flying',
+            'btn-dark': type === 'ghost',
+            'btn-warning': type === 'electric',
+            'btn-secondary': type === 'bug',
+            'btn-light': type === 'normal',
+            'btn-ground': type === 'ground',
+            'btn-fighting': type === 'fighting',
+            'btn-rock': type === 'rock',
+            'btn-fairy': type === 'fairy',
+            'btn-psychic': type === 'psychic',
+            'btn-ice': type === 'ice'
+          }"
+        >
+          {{ type }}
+        </div>
+      </div>
+      <div class="base">
+        <div class="base__item">
+          <ul>
+            <li>Attack</li>
+            <li>Defense</li>
+            <li>HP</li>
+            <li>SpAttack</li>
+            <li>SpDefense</li>
+            <li>Speed</li>
+          </ul>
+        </div>
+        <div class="base__item">
+          <ul>
+            <li>
+              {{ pokemon.base.Attack }}
+            </li>
+            <li>
+              {{ pokemon.base.Defense }}
+            </li>
+            <li>
+              {{ pokemon.base.HP }}
+            </li>
+            <li>
+              {{ pokemon.base.SpAttack }}
+            </li>
+            <li>
+              {{ pokemon.base.SpDefense }}
+            </li>
+            <li>
+              {{ pokemon.base.Speed }}
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div style="text-align: center">
+        <button mat-icon-button (click)="clickLike()">
+          <mat-icon>thumb_up_alt</mat-icon>
+        </button>
+        <button mat-icon-button (click)="clickDislike()">
+          <mat-icon>thumb_down</mat-icon>
+        </button>
+      </div>
+    </mat-card>
+  </div>
+</ng-container>
+
+<ng-template #noPokemon> This fsdfsdfsdf</ng-template>

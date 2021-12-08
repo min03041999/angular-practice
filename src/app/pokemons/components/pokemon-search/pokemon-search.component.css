@@ -1,0 +1,23 @@
+mat-card {
+  width: 400px;
+  display: block;
+  margin: auto;
+}
+
+.pokemon-search {
+  margin-top: 100px;
+}
+.txt__field {
+  margin-right: 10px;
+}
+
+form {
+  text-align: center;
+}
+
+input,
+button {
+  outline: none;
+  background: none;
+  border: none;
+}
